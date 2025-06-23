@@ -1,0 +1,74 @@
+2025-06-23 23:55:31,271 | baseline | /Users/mirambikasikdar/Desktop/Personal/Prep/Coding/Sentiment Analysis Workflow/src/data/preprocessing.py.preprocess_data | Initial dataset size: 241145
+2025-06-23 23:55:31,271 | baseline | /Users/mirambikasikdar/Desktop/Personal/Prep/Coding/Sentiment Analysis Workflow/src/data/preprocessing.py.preprocess_data | After cleaning: 240836
+2025-06-23 23:55:31,271 | baseline | /Users/mirambikasikdar/Desktop/Personal/Prep/Coding/Sentiment Analysis Workflow/src/data/preprocessing.py.preprocess_data | Removed 309 rows
+2025-06-23 23:55:31,272 | baseline | /Users/mirambikasikdar/Desktop/Personal/Prep/Coding/Sentiment Analysis Workflow/src/data/preprocessing.py.preprocess_data | 
+Class distribution after cleaning:
+2025-06-23 23:55:31,274 | baseline | /Users/mirambikasikdar/Desktop/Personal/Prep/Coding/Sentiment Analysis Workflow/src/data/preprocessing.py.preprocess_data | Negative: 55104 (22.88%)
+2025-06-23 23:55:31,277 | baseline | /Users/mirambikasikdar/Desktop/Personal/Prep/Coding/Sentiment Analysis Workflow/src/data/preprocessing.py.preprocess_data | Neutral: 82713 (34.34%)
+2025-06-23 23:55:31,280 | baseline | /Users/mirambikasikdar/Desktop/Personal/Prep/Coding/Sentiment Analysis Workflow/src/data/preprocessing.py.preprocess_data | Positive: 103019 (42.78%)
+2025-06-23 23:57:01,746 | baseline | /Users/mirambikasikdar/Desktop/Personal/Prep/Coding/Sentiment Analysis Workflow/src/data/preprocessing.py.preprocess_data | Initial dataset size: 241145
+2025-06-23 23:57:01,747 | baseline | /Users/mirambikasikdar/Desktop/Personal/Prep/Coding/Sentiment Analysis Workflow/src/data/preprocessing.py.preprocess_data | After cleaning: 240836
+2025-06-23 23:57:01,747 | baseline | /Users/mirambikasikdar/Desktop/Personal/Prep/Coding/Sentiment Analysis Workflow/src/data/preprocessing.py.preprocess_data | Removed 309 rows
+2025-06-23 23:57:01,747 | baseline | /Users/mirambikasikdar/Desktop/Personal/Prep/Coding/Sentiment Analysis Workflow/src/data/preprocessing.py.preprocess_data | 
+Class distribution after cleaning:
+2025-06-23 23:57:01,749 | baseline | /Users/mirambikasikdar/Desktop/Personal/Prep/Coding/Sentiment Analysis Workflow/src/data/preprocessing.py.preprocess_data | Negative: 55104 (22.88%)
+2025-06-23 23:57:01,753 | baseline | /Users/mirambikasikdar/Desktop/Personal/Prep/Coding/Sentiment Analysis Workflow/src/data/preprocessing.py.preprocess_data | Neutral: 82713 (34.34%)
+2025-06-23 23:57:01,757 | baseline | /Users/mirambikasikdar/Desktop/Personal/Prep/Coding/Sentiment Analysis Workflow/src/data/preprocessing.py.preprocess_data | Positive: 103019 (42.78%)
+2025-06-23 23:57:14,523 | baseline | /Users/mirambikasikdar/Desktop/Personal/Prep/Coding/Sentiment Analysis Workflow/src/data/preprocessing.py.preprocess_data | Experiment: logisticregression
+2025-06-23 23:58:26,582 | baseline | /Users/mirambikasikdar/Desktop/Personal/Prep/Coding/Sentiment Analysis Workflow/src/data/preprocessing.py.preprocess_data | Initial dataset size: 241145
+2025-06-23 23:58:26,582 | baseline | /Users/mirambikasikdar/Desktop/Personal/Prep/Coding/Sentiment Analysis Workflow/src/data/preprocessing.py.preprocess_data | After cleaning: 240836
+2025-06-23 23:58:26,582 | baseline | /Users/mirambikasikdar/Desktop/Personal/Prep/Coding/Sentiment Analysis Workflow/src/data/preprocessing.py.preprocess_data | Removed 309 rows
+2025-06-23 23:58:26,583 | baseline | /Users/mirambikasikdar/Desktop/Personal/Prep/Coding/Sentiment Analysis Workflow/src/data/preprocessing.py.preprocess_data | 
+Class distribution after cleaning:
+2025-06-23 23:58:26,585 | baseline | /Users/mirambikasikdar/Desktop/Personal/Prep/Coding/Sentiment Analysis Workflow/src/data/preprocessing.py.preprocess_data | Negative: 55104 (22.88%)
+2025-06-23 23:58:26,589 | baseline | /Users/mirambikasikdar/Desktop/Personal/Prep/Coding/Sentiment Analysis Workflow/src/data/preprocessing.py.preprocess_data | Neutral: 82713 (34.34%)
+2025-06-23 23:58:26,592 | baseline | /Users/mirambikasikdar/Desktop/Personal/Prep/Coding/Sentiment Analysis Workflow/src/data/preprocessing.py.preprocess_data | Positive: 103019 (42.78%)
+2025-06-23 23:58:39,311 | baseline | /Users/mirambikasikdar/Desktop/Personal/Prep/Coding/Sentiment Analysis Workflow/src/data/preprocessing.py.preprocess_data | Experiment: logisticregression
+2025-06-23 23:58:39,313 | baseline | /Users/mirambikasikdar/Desktop/Personal/Prep/Coding/Sentiment Analysis Workflow/src/data/preprocessing.py.preprocess_data | Number of training samples: 192668
+2025-06-23 23:58:39,313 | baseline | /Users/mirambikasikdar/Desktop/Personal/Prep/Coding/Sentiment Analysis Workflow/src/data/preprocessing.py.preprocess_data | Number of test samples: 48168
+2025-06-24 00:01:37,783 | baseline | /Users/mirambikasikdar/Desktop/Personal/Prep/Coding/Sentiment Analysis Workflow/src/data/preprocessing.py.preprocess_data | Initial dataset size: 241145
+2025-06-24 00:01:37,784 | baseline | /Users/mirambikasikdar/Desktop/Personal/Prep/Coding/Sentiment Analysis Workflow/src/data/preprocessing.py.preprocess_data | After cleaning: 240836
+2025-06-24 00:01:37,784 | baseline | /Users/mirambikasikdar/Desktop/Personal/Prep/Coding/Sentiment Analysis Workflow/src/data/preprocessing.py.preprocess_data | Removed 309 rows
+2025-06-24 00:01:37,784 | baseline | /Users/mirambikasikdar/Desktop/Personal/Prep/Coding/Sentiment Analysis Workflow/src/data/preprocessing.py.preprocess_data | 
+Class distribution after cleaning:
+2025-06-24 00:01:37,787 | baseline | /Users/mirambikasikdar/Desktop/Personal/Prep/Coding/Sentiment Analysis Workflow/src/data/preprocessing.py.preprocess_data | Negative: 55104 (22.88%)
+2025-06-24 00:01:37,790 | baseline | /Users/mirambikasikdar/Desktop/Personal/Prep/Coding/Sentiment Analysis Workflow/src/data/preprocessing.py.preprocess_data | Neutral: 82713 (34.34%)
+2025-06-24 00:01:37,793 | baseline | /Users/mirambikasikdar/Desktop/Personal/Prep/Coding/Sentiment Analysis Workflow/src/data/preprocessing.py.preprocess_data | Positive: 103019 (42.78%)
+2025-06-24 00:01:50,773 | baseline | /Users/mirambikasikdar/Desktop/Personal/Prep/Coding/Sentiment Analysis Workflow/src/data/preprocessing.py.preprocess_data | Experiment: logisticregression
+2025-06-24 00:01:50,774 | baseline | /Users/mirambikasikdar/Desktop/Personal/Prep/Coding/Sentiment Analysis Workflow/src/data/preprocessing.py.preprocess_data | Number of training samples: 192668
+2025-06-24 00:01:50,774 | baseline | /Users/mirambikasikdar/Desktop/Personal/Prep/Coding/Sentiment Analysis Workflow/src/data/preprocessing.py.preprocess_data | Number of test samples: 48168
+2025-06-24 00:12:08,094 | baseline | /Users/mirambikasikdar/Desktop/Personal/Prep/Coding/Sentiment Analysis Workflow/src/data/preprocessing.py.preprocess_data | Initial dataset size: 241145
+2025-06-24 00:12:08,094 | baseline | /Users/mirambikasikdar/Desktop/Personal/Prep/Coding/Sentiment Analysis Workflow/src/data/preprocessing.py.preprocess_data | After cleaning: 240836
+2025-06-24 00:12:08,095 | baseline | /Users/mirambikasikdar/Desktop/Personal/Prep/Coding/Sentiment Analysis Workflow/src/data/preprocessing.py.preprocess_data | Removed 309 rows
+2025-06-24 00:12:08,095 | baseline | /Users/mirambikasikdar/Desktop/Personal/Prep/Coding/Sentiment Analysis Workflow/src/data/preprocessing.py.preprocess_data | 
+Class distribution after cleaning:
+2025-06-24 00:12:08,097 | baseline | /Users/mirambikasikdar/Desktop/Personal/Prep/Coding/Sentiment Analysis Workflow/src/data/preprocessing.py.preprocess_data | Negative: 55104 (22.88%)
+2025-06-24 00:12:08,101 | baseline | /Users/mirambikasikdar/Desktop/Personal/Prep/Coding/Sentiment Analysis Workflow/src/data/preprocessing.py.preprocess_data | Neutral: 82713 (34.34%)
+2025-06-24 00:12:08,105 | baseline | /Users/mirambikasikdar/Desktop/Personal/Prep/Coding/Sentiment Analysis Workflow/src/data/preprocessing.py.preprocess_data | Positive: 103019 (42.78%)
+2025-06-24 00:12:27,065 | baseline | /Users/mirambikasikdar/Desktop/Personal/Prep/Coding/Sentiment Analysis Workflow/src/data/preprocessing.py.preprocess_data | Experiment: logisticregression
+2025-06-24 00:12:27,066 | baseline | /Users/mirambikasikdar/Desktop/Personal/Prep/Coding/Sentiment Analysis Workflow/src/data/preprocessing.py.preprocess_data | Number of training samples: 192668
+2025-06-24 00:12:27,066 | baseline | /Users/mirambikasikdar/Desktop/Personal/Prep/Coding/Sentiment Analysis Workflow/src/data/preprocessing.py.preprocess_data | Number of test samples: 48168
+2025-06-24 00:13:27,013 | baseline | /Users/mirambikasikdar/Desktop/Personal/Prep/Coding/Sentiment Analysis Workflow/src/models/baseline.py.run_baseline | Experiment: logisticregression
+2025-06-24 00:13:27,013 | baseline | /Users/mirambikasikdar/Desktop/Personal/Prep/Coding/Sentiment Analysis Workflow/src/models/baseline.py.run_baseline | Number of training samples: 192668
+2025-06-24 00:13:27,013 | baseline | /Users/mirambikasikdar/Desktop/Personal/Prep/Coding/Sentiment Analysis Workflow/src/models/baseline.py.run_baseline | Number of test samples: 48168
+2025-06-24 00:14:27,955 | baseline | /Users/mirambikasikdar/Desktop/Personal/Prep/Coding/Sentiment Analysis Workflow/src/models/baseline.py.run_baseline | Grid search child run 0 params: {'estimator__C': 0.1, 'estimator__penalty': 'l1', 'estimator__solver': 'liblinear'}
+2025-06-24 00:14:27,957 | baseline | /Users/mirambikasikdar/Desktop/Personal/Prep/Coding/Sentiment Analysis Workflow/src/models/baseline.py.run_baseline | Grid search child run 0 metrics: accuracy=0.7547749543265239, f1=0.7520538065650078, mean_test_f1=0.7449541205125554
+2025-06-24 00:14:27,957 | baseline | /Users/mirambikasikdar/Desktop/Personal/Prep/Coding/Sentiment Analysis Workflow/src/models/baseline.py.run_baseline | TF-IDF max_features (vector size): 5000
+2025-06-24 00:14:55,359 | baseline | /Users/mirambikasikdar/Desktop/Personal/Prep/Coding/Sentiment Analysis Workflow/src/models/baseline.py.run_baseline | Grid search child run 1 params: {'estimator__C': 0.1, 'estimator__penalty': 'l2', 'estimator__solver': 'liblinear'}
+2025-06-24 00:14:55,359 | baseline | /Users/mirambikasikdar/Desktop/Personal/Prep/Coding/Sentiment Analysis Workflow/src/models/baseline.py.run_baseline | Grid search child run 1 metrics: accuracy=0.7426507224713502, f1=0.737393187016981, mean_test_f1=0.7318340802278152
+2025-06-24 00:14:55,359 | baseline | /Users/mirambikasikdar/Desktop/Personal/Prep/Coding/Sentiment Analysis Workflow/src/models/baseline.py.run_baseline | TF-IDF max_features (vector size): 5000
+2025-06-24 00:15:24,340 | baseline | /Users/mirambikasikdar/Desktop/Personal/Prep/Coding/Sentiment Analysis Workflow/src/models/baseline.py.run_baseline | Grid search child run 2 params: {'estimator__C': 1.0, 'estimator__penalty': 'l1', 'estimator__solver': 'liblinear'}
+2025-06-24 00:15:24,342 | baseline | /Users/mirambikasikdar/Desktop/Personal/Prep/Coding/Sentiment Analysis Workflow/src/models/baseline.py.run_baseline | Grid search child run 2 metrics: accuracy=0.7863934562365056, f1=0.785456886921566, mean_test_f1=0.7867049976130469
+2025-06-24 00:15:24,342 | baseline | /Users/mirambikasikdar/Desktop/Personal/Prep/Coding/Sentiment Analysis Workflow/src/models/baseline.py.run_baseline | TF-IDF max_features (vector size): 5000
+2025-06-24 00:15:53,307 | baseline | /Users/mirambikasikdar/Desktop/Personal/Prep/Coding/Sentiment Analysis Workflow/src/models/baseline.py.run_baseline | Grid search child run 3 params: {'estimator__C': 1.0, 'estimator__penalty': 'l2', 'estimator__solver': 'liblinear'}
+2025-06-24 00:15:53,308 | baseline | /Users/mirambikasikdar/Desktop/Personal/Prep/Coding/Sentiment Analysis Workflow/src/models/baseline.py.run_baseline | Grid search child run 3 metrics: accuracy=0.7806012290317224, f1=0.7791759910056398, mean_test_f1=0.7787149356192062
+2025-06-24 00:15:53,308 | baseline | /Users/mirambikasikdar/Desktop/Personal/Prep/Coding/Sentiment Analysis Workflow/src/models/baseline.py.run_baseline | TF-IDF max_features (vector size): 5000
+2025-06-24 00:16:22,300 | baseline | /Users/mirambikasikdar/Desktop/Personal/Prep/Coding/Sentiment Analysis Workflow/src/models/baseline.py.run_baseline | Grid search child run 4 params: {'estimator__C': 10.0, 'estimator__penalty': 'l1', 'estimator__solver': 'liblinear'}
+2025-06-24 00:16:22,300 | baseline | /Users/mirambikasikdar/Desktop/Personal/Prep/Coding/Sentiment Analysis Workflow/src/models/baseline.py.run_baseline | Grid search child run 4 metrics: accuracy=0.7824281680783923, f1=0.7815801124367193, mean_test_f1=0.7818588394788658
+2025-06-24 00:16:22,300 | baseline | /Users/mirambikasikdar/Desktop/Personal/Prep/Coding/Sentiment Analysis Workflow/src/models/baseline.py.run_baseline | TF-IDF max_features (vector size): 5000
+2025-06-24 00:16:51,327 | baseline | /Users/mirambikasikdar/Desktop/Personal/Prep/Coding/Sentiment Analysis Workflow/src/models/baseline.py.run_baseline | Grid search child run 5 params: {'estimator__C': 10.0, 'estimator__penalty': 'l2', 'estimator__solver': 'liblinear'}
+2025-06-24 00:16:51,328 | baseline | /Users/mirambikasikdar/Desktop/Personal/Prep/Coding/Sentiment Analysis Workflow/src/models/baseline.py.run_baseline | Grid search child run 5 metrics: accuracy=0.7819091513037701, f1=0.7809784895127025, mean_test_f1=0.7817143635576281
+2025-06-24 00:16:51,329 | baseline | /Users/mirambikasikdar/Desktop/Personal/Prep/Coding/Sentiment Analysis Workflow/src/models/baseline.py.run_baseline | TF-IDF max_features (vector size): 5000
+2025-06-24 00:17:48,656 | baseline | /Users/mirambikasikdar/Desktop/Personal/Prep/Coding/Sentiment Analysis Workflow/src/models/baseline.py.run_baseline | Best model params: {'estimator__C': 1.0, 'estimator__penalty': 'l1', 'estimator__solver': 'liblinear'}
+2025-06-24 00:17:48,658 | baseline | /Users/mirambikasikdar/Desktop/Personal/Prep/Coding/Sentiment Analysis Workflow/src/models/baseline.py.run_baseline | Best model metrics: best_cv_f1_score=0.7867049976130469, best_accuracy=0.7863934562365056, best_f1_score=0.785456886921566
+2025-06-24 00:17:48,658 | baseline | /Users/mirambikasikdar/Desktop/Personal/Prep/Coding/Sentiment Analysis Workflow/src/models/baseline.py.run_baseline | Best model TF-IDF max_features (vector size): 5000

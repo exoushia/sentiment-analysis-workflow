@@ -1,7 +1,13 @@
 [core]
     autostage = true
-    remote = origin
+    remote = dagshub-s3
 ['remote "origin"']
     url = https://dagshub.com/mirambika00/sentiment-analysis-workflow.mlflow.dvc
 ['remote "default"']
     url = ../origin
+['remote "dagshub-s3"']
+    url = s3://sentiment-analysis-workflow/
+    access_key_id = b45c6fb24f124289021e2ae1d0101956c5330aa5
+    secret_access_key = b45c6fb24f124289021e2ae1d0101956c5330aa5
+    region = us-east-1
+    endpointurl = https://dagshub.com/api/v1/repo-buckets/s3/mirambika00

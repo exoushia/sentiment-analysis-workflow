@@ -13,6 +13,7 @@ import seaborn as sns
 from wordcloud import WordCloud
 from scripts.utils import load_config, get_logger, load_params
 
+
 logger = get_logger("baseline", "baseline.log")
 
 
@@ -91,6 +92,7 @@ def preprocess_data(config: dict) -> None:
     params = load_params()
     sentiment_labels = params.get('sentiment_labels', {0: "Negative", 1: "Neutral", 2: "Positive"})
     valid_sentiments = list(sentiment_labels.keys())
+    baseline_params = params['baseline']
     
     # Load configuration
     config = load_config()
@@ -147,14 +149,8 @@ def preprocess_data(config: dict) -> None:
     test_df.to_csv(os.path.join(processed_data_path, 'test.csv'), index=False)
 
     logger.info(f"Experiment: {baseline_params.get('model', 'unknown')}")
-    logger.info(f"Number of training samples: {len(X_train)}")
-    logger.info(f"Number of test samples: {len(X_test)}")
-
-    logger.info(f"Grid search child run {i} params: {params}")
-    logger.info(f"Grid search child run {i} metrics: accuracy={acc}, f1={f1}, mean_test_f1={results['mean_test_score'][i]}")
-    logger.info(f"Best model params: {best_params}")
-    logger.info(f"Best model metrics: best_cv_f1_score={best_score}, best_accuracy={acc}, best_f1_score={f1}")
-    logger.info(f"No grid search. Model: {selected_model}, accuracy={acc}, f1={f1}")
+    logger.info(f"Number of training samples: {len(train_df)}")
+    logger.info(f"Number of test samples: {len(test_df)}")
 
 if __name__ == '__main__':
     config = load_config()

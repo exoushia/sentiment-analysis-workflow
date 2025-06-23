@@ -141,11 +141,13 @@ def run_baseline() -> None:
                     # Log per-class metrics
                     for class_idx, class_name in sorted(sentiment_labels.items()):
                         if class_name in report:
+                            
                             mlflow.log_metric(f"precision_{class_name}", report[class_name]["precision"])
                             mlflow.log_metric(f"recall_{class_name}", report[class_name]["recall"])
                             mlflow.log_metric(f"f1_{class_name}", report[class_name]["f1-score"])
                     logger.info(f"Grid search child run {i} params: {params}")
                     logger.info(f"Grid search child run {i} metrics: accuracy={acc}, f1={f1}, mean_test_f1={results['mean_test_score'][i]}")
+                    logger.info(f"TF-IDF max_features (vector size): {baseline_params['tfidf_max_features']}")
             # Log the best model and parameters to the parent run
             mlflow.log_params({f"best_{k}": v for k, v in best_params.items()})
             mlflow.log_metric("best_cv_f1_score", best_score)
@@ -183,6 +185,7 @@ def run_baseline() -> None:
             os.remove("tfidf_vectorizer.pkl")
             logger.info(f"Best model params: {best_params}")
             logger.info(f"Best model metrics: best_cv_f1_score={best_score}, best_accuracy={acc}, best_f1_score={f1}")
+            logger.info(f"Best model TF-IDF max_features (vector size): {baseline_params['tfidf_max_features']}")
         else:
             # Train without grid search
             model = model_info['model']

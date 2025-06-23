@@ -9,12 +9,12 @@ stages:
       size: 10775600
       nfiles: 1
   preprocess:
-    cmd: python3 src/data/preprocessing.py
+    cmd: PYTHONPATH=. python3 src/data/preprocessing.py
     deps:
     - path: config/config.yaml
       hash: md5
-      md5: aae2f65bb2a5e4dd956d2ef19a0dea6e
-      size: 479
+      md5: 64fd27fa5eb0f91385de03efa4611fed
+      size: 319
     - path: data/sentiment_data.csv
       hash: md5
       md5: 62f201f90bbd3adf63e2d1020a8b067e
@@ -26,21 +26,21 @@ stages:
       nfiles: 1
     - path: src/data/preprocessing.py
       hash: md5
-      md5: a41bd619449d9df6a5bbec97eac92177
-      size: 5375
+      md5: c9a317b99d9ed9f5b429574343279665
+      size: 5607
     outs:
     - path: data/processed
       hash: md5
-      md5: 349bdb9b42cdd4f22862e3be55753e02.dir
-      size: 23087238
+      md5: 667a58a1453bf11cf3280f6af90e5a6c.dir
+      size: 23083989
       nfiles: 6
   log_eda:
-    cmd: python3 src/data/log_eda_mlflow.py
+    cmd: PYTHONPATH=. python3 src/data/log_eda_mlflow.py
     deps:
     - path: config/config.yaml
       hash: md5
-      md5: aae2f65bb2a5e4dd956d2ef19a0dea6e
-      size: 479
+      md5: 64fd27fa5eb0f91385de03efa4611fed
+      size: 319
     - path: data/processed/eda/class_distribution.png
       hash: md5
       md5: 752e155da183f8709c26389be0c08251
@@ -55,19 +55,19 @@ stages:
       size: 13028
     - path: data/processed/eda/wordcloud.png
       hash: md5
-      md5: 9722f6cf3f367ae4a91bd6d6c0dfca8e
-      size: 385361
+      md5: e7c6609b7d2beda7bbb8efb9f6d050b3
+      size: 382112
     - path: src/data/log_eda_mlflow.py
       hash: md5
-      md5: 99e2981301c0a99831049a7f1982e8f8
-      size: 680
+      md5: c6713aff13a7128e959ec88be8265706
+      size: 647
   baseline:
-    cmd: python3 src/models/baseline.py
+    cmd: PYTHONPATH=. python3 src/models/baseline.py
     deps:
     - path: config/config.yaml
       hash: md5
-      md5: aae2f65bb2a5e4dd956d2ef19a0dea6e
-      size: 479
+      md5: 64fd27fa5eb0f91385de03efa4611fed
+      size: 319
     - path: data/processed/test.csv
       hash: md5
       md5: 10ac3988529b25df78954cb9d558c91e
@@ -78,9 +78,9 @@ stages:
       size: 18125365
     - path: params.yaml
       hash: md5
-      md5: f891aba8e2b17e9ad81f1ca055ed47a5
-      size: 557
+      md5: 13d07fa3f8a8dcf6db91d963067f7bbf
+      size: 720
     - path: src/models/baseline.py
       hash: md5
-      md5: 81b5fb5b8398afcb6821b41e4293d874
-      size: 10157
+      md5: 2c9255f00bd4dacef8e5780ab98b64be
+      size: 11580

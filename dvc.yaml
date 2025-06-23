@@ -5,7 +5,7 @@ stages:
       - nltk_data
 
   preprocess:
-    cmd: python3 src/data/preprocessing.py
+    cmd: PYTHONPATH=. python3 src/data/preprocessing.py
     deps:
       - src/data/preprocessing.py
       - data/sentiment_data.csv
@@ -15,7 +15,7 @@ stages:
       - data/processed
 
   log_eda:
-    cmd: python3 src/data/log_eda_mlflow.py
+    cmd: PYTHONPATH=. python3 src/data/log_eda_mlflow.py
     deps:
       - src/data/log_eda_mlflow.py
       - data/processed/eda/missing_values.png
@@ -25,7 +25,7 @@ stages:
       - config/config.yaml
 
   baseline:
-    cmd: python3 src/models/baseline.py
+    cmd: PYTHONPATH=. python3 src/models/baseline.py
     deps:
       - src/models/baseline.py
       - data/processed/train.csv
