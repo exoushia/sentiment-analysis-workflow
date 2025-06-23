@@ -1,0 +1,59 @@
+run_mode: baseline  # Options: both, baseline, bert
+
+baseline:
+  tfidf_max_features: 5000
+  model: logisticregression  # or bernoulinaivebayes
+  grid_search: true
+  logisticregression:
+    max_iter: 200
+    param_grid:
+      C: [0.1, 1.0, 10.0]
+      penalty: ['l1', 'l2']
+      solver: ['liblinear']
+  bernoulinaivebayes:
+    param_grid:
+      alpha: [0.1, 1.0, 10.0]
+  tags:
+    model_type: baseline
+    data_version: v1
+
+test_size: 0.2
+
+bert:
+  model_name: bert-base-uncased
+  use_nn_head: false
+  nn_head_hidden_dim: 128
+  epochs: 2
+  batch_size: 16
+  learning_rate: 2e-5
+  max_len: 128
+  fast_run: true
+  train_sample_size: 500
+  val_sample_size: 200
+  tags:
+    model_type: transformer
+    architecture: bert
+    data_version: v1
+
+lstm:
+  embedding_dim: 100
+  hidden_dim: 256
+  n_layers: 2
+  bidirectional: true
+  dropout: 0.5
+  batch_size: 64
+  epochs: 5
+  learning_rate: 0.001
+  fast_run: true
+  train_sample_size: 1000
+  val_sample_size: 400
+  tags:
+    model_type: deep_learning
+    architecture: lstm
+    data_version: v1
+
+# Sentiment label mapping
+sentiment_labels:
+  0: "Negative"
+  1: "Neutral"
+  2: "Positive"

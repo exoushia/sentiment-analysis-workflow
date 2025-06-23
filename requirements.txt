@@ -1,0 +1,15 @@
+dvc
+mlflow
+torch
+pandas
+scikit-learn
+boto3
+python-dotenv
+PyYAML
+nltk
+contractions
+wordcloud
+matplotlib
+seaborn
+transformers
+torchmetrics

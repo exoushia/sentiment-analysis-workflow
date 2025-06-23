@@ -1,0 +1,63 @@
+schema: '2.0'
+stages:
+  download_nltk:
+    cmd: python3 scripts/download_nltk_data.py
+    outs:
+    - path: nltk_data
+      hash: md5
+      md5: e5492a96d13403f58aae666212b7cdfa.dir
+      size: 10775600
+      nfiles: 1
+  preprocess:
+    cmd: python3 src/data/preprocessing.py
+    deps:
+    - path: config/config.yaml
+      hash: md5
+      md5: 73fc9670baa900f818dd319e7f7e8f68
+      size: 365
+    - path: data/sentiment_data.csv
+      hash: md5
+      md5: 62f201f90bbd3adf63e2d1020a8b067e
+      size: 23860510
+    - path: nltk_data
+      hash: md5
+      md5: e5492a96d13403f58aae666212b7cdfa.dir
+      size: 10775600
+      nfiles: 1
+    - path: src/data/preprocessing.py
+      hash: md5
+      md5: a41bd619449d9df6a5bbec97eac92177
+      size: 5375
+    outs:
+    - path: data/processed
+      hash: md5
+      md5: 69e69abb4a2f8eb9365b67ec34a72c5c.dir
+      size: 23071766
+      nfiles: 6
+  log_eda:
+    cmd: python3 src/data/log_eda_mlflow.py
+    deps:
+    - path: config/config.yaml
+      hash: md5
+      md5: 73fc9670baa900f818dd319e7f7e8f68
+      size: 365
+    - path: data/processed/eda/class_distribution.png
+      hash: md5
+      md5: 752e155da183f8709c26389be0c08251
+      size: 14133
+    - path: data/processed/eda/common_words.png
+      hash: md5
+      md5: 124dba3f4eb38570da20454c40558d98
+      size: 25362
+    - path: data/processed/eda/missing_values.png
+      hash: md5
+      md5: 2a1c341b009547cddcf90e1ef007a5e1
+      size: 13028
+    - path: data/processed/eda/wordcloud.png
+      hash: md5
+      md5: 4368a6d18488b32bdf75799aefd6c29c
+      size: 369889
+    - path: src/data/log_eda_mlflow.py
+      hash: md5
+      md5: 99e2981301c0a99831049a7f1982e8f8
+      size: 680

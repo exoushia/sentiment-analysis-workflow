@@ -1,0 +1,62 @@
+stages:
+  download_nltk:
+    cmd: python3 scripts/download_nltk_data.py
+    outs:
+      - nltk_data
+
+  preprocess:
+    cmd: python3 src/data/preprocessing.py
+    deps:
+      - src/data/preprocessing.py
+      - data/sentiment_data.csv
+      - config/config.yaml
+      - nltk_data
+    outs:
+      - data/processed
+
+  log_eda:
+    cmd: python3 src/data/log_eda_mlflow.py
+    deps:
+      - src/data/log_eda_mlflow.py
+      - data/processed/eda/missing_values.png
+      - data/processed/eda/class_distribution.png
+      - data/processed/eda/common_words.png
+      - data/processed/eda/wordcloud.png
+      - config/config.yaml
+
+  baseline:
+    cmd: python3 src/models/baseline.py
+    deps:
+      - src/models/baseline.py
+      - data/processed/train.csv
+      - data/processed/test.csv
+      - config/config.yaml
+    params:
+      - params.yaml:baseline.grid_search
+      - params.yaml:baseline.logisticregression.max_iter
+      - params.yaml:baseline.logisticregression.param_grid.C
+      - params.yaml:baseline.logisticregression.param_grid.penalty
+      - params.yaml:baseline.logisticregression.param_grid.solver
+      - params.yaml:baseline.bernoullinaivebayes.param_grid.alpha
+
+  # train_sentimentLstm:
+  #   cmd: python3 src/training/train_sentimentLstm.py
+  #   deps:
+  #     - src/training/train_sentimentLstm.py
+  #     - src/models/model_sentimentLstm.py
+  #     - data/processed
+  #     - config/config.yaml
+  #     - params.yaml
+  #   outs:
+  #     - models/vocab_sentimentLstm.pkl
+  #     - mlruns
+
+  bert_finetune:
+    cmd: python3 src/models/bert_finetune.py
+    deps:
+      - src/models/bert_finetune.py
+      - data/processed/train.csv
+      - data/processed/test.csv
+      - config/config.yaml
+    params:
+      - params.yaml:bert
