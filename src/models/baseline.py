@@ -12,6 +12,8 @@ import pickle
 import mlflow
 import mlflow.sklearn
 import nltk
+from sklearn.multiclass import OneVsRestClassifier
+
 
 def load_config(config_path='config/config.yaml'):
     import yaml
@@ -48,6 +50,14 @@ def run_baseline():
     X_train, y_train = train_df[text_col], train_df[sentiment_col]
     X_test, y_test = test_df[text_col], test_df[sentiment_col]
     
+    # Log the number of samples
+    print(f"Number of training samples: {len(X_train)}")
+    print(f"Number of test samples: {len(X_test)}")
+
+    # Fill NaN values with empty strings
+    X_train = X_train.fillna("")
+    X_test = X_test.fillna("")
+    
     # Vectorize text
     vectorizer = TfidfVectorizer(max_features=baseline_params['tfidf_max_features'])
     X_train_vec = vectorizer.fit_transform(X_train)
@@ -60,7 +70,7 @@ def run_baseline():
             "param_grid": baseline_params['bernoulinaivebayes']['param_grid'] if baseline_params['grid_search'] else {}
         },
         "logisticregression": {
-            "model": LogisticRegression(max_iter=baseline_params['logisticregression']['max_iter']),
+            "model": OneVsRestClassifier(LogisticRegression(max_iter=baseline_params['logisticregression']['max_iter'])),
             "param_grid": baseline_params['logisticregression']['param_grid'] if baseline_params['grid_search'] else {}
         }
     }
@@ -111,7 +121,7 @@ def run_baseline():
         report = classification_report(
             y_test, 
             preds, 
-            target_names=[sentiment_labels[str(i)] for i in sorted(sentiment_labels.keys())],
+            target_names=[sentiment_labels[i] for i in sorted(sentiment_labels.keys())],
             output_dict=True
         )
         
@@ -124,7 +134,7 @@ def run_baseline():
         cm_path = f"confusion_matrix_{selected_model}.png"
         plot_confusion_matrix(
             cm, 
-            classes=[sentiment_labels[str(i)] for i in sorted(sentiment_labels.keys())],
+            classes=[sentiment_labels[i] for i in sorted(sentiment_labels.keys())],
             out_path=cm_path
         )
         mlflow.log_artifact(cm_path)

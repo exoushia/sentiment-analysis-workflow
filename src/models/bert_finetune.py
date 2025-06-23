@@ -5,7 +5,7 @@ import pandas as pd
 import numpy as np
 import torch
 from torch.utils.data import Dataset, DataLoader
-from transformers import BertTokenizer, BertModel, BertForSequenceClassification, AdamW, get_linear_schedule_with_warmup
+from transformers import BertTokenizer, BertModel, BertForSequenceClassification, get_linear_schedule_with_warmup, AdamW
 import torch.nn as nn
 import torch.nn.functional as F
 from sklearn.metrics import accuracy_score, f1_score, classification_report

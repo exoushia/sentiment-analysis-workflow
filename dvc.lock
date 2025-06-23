@@ -31,8 +31,8 @@ stages:
     outs:
     - path: data/processed
       hash: md5
-      md5: 69e69abb4a2f8eb9365b67ec34a72c5c.dir
-      size: 23071766
+      md5: baecff1485a9f99b16a824a63d777962.dir
+      size: 23088015
       nfiles: 6
   log_eda:
     cmd: python3 src/data/log_eda_mlflow.py
@@ -55,9 +55,32 @@ stages:
       size: 13028
     - path: data/processed/eda/wordcloud.png
       hash: md5
-      md5: 4368a6d18488b32bdf75799aefd6c29c
-      size: 369889
+      md5: b6a9461be37885069a4d8fd0c4885286
+      size: 386138
     - path: src/data/log_eda_mlflow.py
       hash: md5
       md5: 99e2981301c0a99831049a7f1982e8f8
       size: 680
+  baseline:
+    cmd: python3 src/models/baseline.py
+    deps:
+    - path: config/config.yaml
+      hash: md5
+      md5: 73fc9670baa900f818dd319e7f7e8f68
+      size: 365
+    - path: data/processed/test.csv
+      hash: md5
+      md5: 10ac3988529b25df78954cb9d558c91e
+      size: 4523989
+    - path: data/processed/train.csv
+      hash: md5
+      md5: 756eb577a11375ec8c8387638b833672
+      size: 18125365
+    - path: params.yaml
+      hash: md5
+      md5: ff85970362f9ca8d10d24bb24f44c984
+      size: 1158
+    - path: src/models/baseline.py
+      hash: md5
+      md5: 6ac37f6cb67ec78cd793db3eb077306f
+      size: 6058

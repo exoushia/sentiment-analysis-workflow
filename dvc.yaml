@@ -31,13 +31,7 @@ stages:
       - data/processed/train.csv
       - data/processed/test.csv
       - config/config.yaml
-    params:
-      - params.yaml:baseline.grid_search
-      - params.yaml:baseline.logisticregression.max_iter
-      - params.yaml:baseline.logisticregression.param_grid.C
-      - params.yaml:baseline.logisticregression.param_grid.penalty
-      - params.yaml:baseline.logisticregression.param_grid.solver
-      - params.yaml:baseline.bernoullinaivebayes.param_grid.alpha
+      - params.yaml
 
   # train_sentimentLstm:
   #   cmd: python3 src/training/train_sentimentLstm.py
@@ -58,5 +52,4 @@ stages:
       - data/processed/train.csv
       - data/processed/test.csv
       - config/config.yaml
-    params:
-      - params.yaml:bert
+      - params.yaml

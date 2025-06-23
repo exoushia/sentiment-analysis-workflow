@@ -7,9 +7,9 @@ baseline:
   logisticregression:
     max_iter: 200
     param_grid:
-      C: [0.1, 1.0, 10.0]
-      penalty: ['l1', 'l2']
-      solver: ['liblinear']
+      estimator__C: [0.1, 1.0, 10.0]
+      estimator__penalty: ['l1', 'l2']
+      estimator__solver: ['liblinear']
   bernoulinaivebayes:
     param_grid:
       alpha: [0.1, 1.0, 10.0]
