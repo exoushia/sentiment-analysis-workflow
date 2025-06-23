@@ -14,24 +14,11 @@ import mlflow.sklearn
 import nltk
 from sklearn.multiclass import OneVsRestClassifier
 from sklearn.ensemble import RandomForestClassifier
+from scripts.utils import load_config, get_logger, load_credentials, load_params
 
+# Set up logger
+logger = get_logger("baseline", "baseline.log")
 
-def load_config(config_path: str = 'config/config.yaml') -> dict:
-    import yaml
-    with open(config_path, 'r') as f:
-        return yaml.safe_load(f)
-
-def load_params(params_path: str = 'params.yaml') -> dict:
-    import yaml
-    with open(params_path, 'r') as f:
-        return yaml.safe_load(f)
-
-def load_credentials(creds_path: str = 'config/credentials.yaml') -> dict:
-    import yaml
-    if os.path.exists(creds_path):
-        with open(creds_path, 'r') as f:
-            return yaml.safe_load(f)
-    return {}
 
 def plot_confusion_matrix(cm: np.ndarray, classes: list[str], out_path: str) -> None:
     """Plot and save a confusion matrix as a PNG file."""
@@ -60,9 +47,10 @@ def run_baseline() -> None:
     X_train, y_train = train_df[text_col], train_df[sentiment_col]
     X_test, y_test = test_df[text_col], test_df[sentiment_col]
     
-    # Log the number of samples
-    print(f"Number of training samples: {len(X_train)}")
-    print(f"Number of test samples: {len(X_test)}")
+    # Log the number of samples and experiment name
+    logger.info(f"Experiment: {baseline_params.get('model', 'unknown')}")
+    logger.info(f"Number of training samples: {len(X_train)}")
+    logger.info(f"Number of test samples: {len(X_test)}")
 
     # Fill NaN values with empty strings
     X_train = X_train.fillna("")
@@ -156,6 +144,8 @@ def run_baseline() -> None:
                             mlflow.log_metric(f"precision_{class_name}", report[class_name]["precision"])
                             mlflow.log_metric(f"recall_{class_name}", report[class_name]["recall"])
                             mlflow.log_metric(f"f1_{class_name}", report[class_name]["f1-score"])
+                    logger.info(f"Grid search child run {i} params: {params}")
+                    logger.info(f"Grid search child run {i} metrics: accuracy={acc}, f1={f1}, mean_test_f1={results['mean_test_score'][i]}")
             # Log the best model and parameters to the parent run
             mlflow.log_params({f"best_{k}": v for k, v in best_params.items()})
             mlflow.log_metric("best_cv_f1_score", best_score)
@@ -191,6 +181,8 @@ def run_baseline() -> None:
                 pickle.dump(vectorizer, f)
             mlflow.log_artifact("tfidf_vectorizer.pkl")
             os.remove("tfidf_vectorizer.pkl")
+            logger.info(f"Best model params: {best_params}")
+            logger.info(f"Best model metrics: best_cv_f1_score={best_score}, best_accuracy={acc}, best_f1_score={f1}")
         else:
             # Train without grid search
             model = model_info['model']
@@ -205,6 +197,7 @@ def run_baseline() -> None:
                 target_names=[sentiment_labels[i] for i in sorted(sentiment_labels.keys())],
                 output_dict=True
             )
+            logger.info(f"No grid search. Model: {selected_model}, accuracy={acc}, f1={f1}")
             mlflow.log_metric("accuracy", acc)
             mlflow.log_metric("f1_score", f1)
             mlflow.log_dict(report, "classification_report.json")

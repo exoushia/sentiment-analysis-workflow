@@ -12,7 +12,3 @@ mlflow:
   experiments:
     eda: eda
     baseline: baseline
-    bert: bert_finetuning
-    lstm: lstm_training
-
-# Sensitive credentials (tokens, passwords, keys) should be placed in config/credentials.yaml (not committed)

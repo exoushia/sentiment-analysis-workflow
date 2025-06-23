@@ -13,6 +13,12 @@ baseline:
   bernoulinaivebayes:
     param_grid:
       alpha: [0.1, 1.0, 10.0]
+  randomforest:
+    param_grid:
+      n_estimators: [100, 200, 300]
+      max_depth: [10, 20, null]
+      min_samples_split: [2, 5]
+      min_samples_leaf: [1, 2]
   tags:
     model_type: baseline
     data_version: v1

@@ -1,10 +1,7 @@
 import os
 import mlflow
-import yaml
+from scripts.utils import load_config
 
-def load_config(config_path: str = 'config/config.yaml') -> dict:
-    with open(config_path, 'r') as f:
-        return yaml.safe_load(f)
 
 def log_eda_artifacts(eda_dir: str, experiment_name: str = "eda") -> None:
     """Log EDA artifacts (PNG files) to MLflow under the given experiment."""

@@ -1,7 +1,6 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
 import os
-import yaml
 import re
 import contractions
 import string
@@ -12,14 +11,10 @@ from nltk.tokenize import word_tokenize
 import matplotlib.pyplot as plt
 import seaborn as sns
 from wordcloud import WordCloud
+from scripts.utils import load_config, get_logger, load_params
 
-def load_config(config_path: str = 'config/config.yaml') -> dict:
-    with open(config_path, 'r') as f:
-        return yaml.safe_load(f)
+logger = get_logger("baseline", "baseline.log")
 
-def load_params(params_path: str = 'params.yaml') -> dict:
-    with open(params_path, 'r') as f:
-        return yaml.safe_load(f)
 
 def clean_text(text: str) -> str:
     """Clean and preprocess a text string."""
@@ -130,13 +125,13 @@ def preprocess_data(config: dict) -> None:
     df = df[df[text_col] != '']
     
     # Log data cleaning statistics
-    print(f"Initial dataset size: {initial_size}")
-    print(f"After cleaning: {len(df)}")
-    print(f"Removed {initial_size - len(df)} rows")
-    print("\nClass distribution after cleaning:")
+    logger.info(f"Initial dataset size: {initial_size}")
+    logger.info(f"After cleaning: {len(df)}")
+    logger.info(f"Removed {initial_size - len(df)} rows")
+    logger.info("\nClass distribution after cleaning:")
     for sentiment_id, label in sentiment_labels.items():
         count = len(df[df[sentiment_col] == sentiment_id])
-        print(f"{label}: {count} ({count/len(df)*100:.2f}%)")
+        logger.info(f"{label}: {count} ({count/len(df)*100:.2f}%)")
 
     # EDA
     os.makedirs(eda_dir, exist_ok=True)
@@ -150,6 +145,16 @@ def preprocess_data(config: dict) -> None:
     os.makedirs(processed_data_path, exist_ok=True)
     train_df.to_csv(os.path.join(processed_data_path, 'train.csv'), index=False)
     test_df.to_csv(os.path.join(processed_data_path, 'test.csv'), index=False)
+
+    logger.info(f"Experiment: {baseline_params.get('model', 'unknown')}")
+    logger.info(f"Number of training samples: {len(X_train)}")
+    logger.info(f"Number of test samples: {len(X_test)}")
+
+    logger.info(f"Grid search child run {i} params: {params}")
+    logger.info(f"Grid search child run {i} metrics: accuracy={acc}, f1={f1}, mean_test_f1={results['mean_test_score'][i]}")
+    logger.info(f"Best model params: {best_params}")
+    logger.info(f"Best model metrics: best_cv_f1_score={best_score}, best_accuracy={acc}, best_f1_score={f1}")
+    logger.info(f"No grid search. Model: {selected_model}, accuracy={acc}, f1={f1}")
 
 if __name__ == '__main__':
     config = load_config()
