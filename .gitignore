@@ -50,4 +50,7 @@ Thumbs.db
 /data/sentiment_data.csv
 
 # nltk_data
-nltk_data/ 
+nltk_data/
+
+# Config
+config/credentials.yaml 

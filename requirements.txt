@@ -1,5 +1,5 @@
 dvc
-mlflow
+mlflow==2.11.3
 torch
 pandas
 scikit-learn

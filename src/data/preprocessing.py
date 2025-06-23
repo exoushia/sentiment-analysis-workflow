@@ -13,7 +13,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from wordcloud import WordCloud
 
-def load_config(config_path='config/config.yaml'):
+def load_config(config_path: str = 'config/config.yaml') -> dict:
     with open(config_path, 'r') as f:
         return yaml.safe_load(f)
 
@@ -21,7 +21,8 @@ def load_params(params_path: str = 'params.yaml') -> dict:
     with open(params_path, 'r') as f:
         return yaml.safe_load(f)
 
-def clean_text(text):
+def clean_text(text: str) -> str:
+    """Clean and preprocess a text string."""
     text = str(text).lower()
     text = re.sub(r'<.*?>','',text)
     text = re.sub(r"http\S+|www\S+|https\S+", '', text)
@@ -39,7 +40,7 @@ def clean_text(text):
     text = " ".join(tokens)
     return text
 
-def plot_eda(df, text_col, sentiment_col, out_dir, sentiment_labels):
+def plot_eda(df: pd.DataFrame, text_col: str, sentiment_col: str, out_dir: str, sentiment_labels: dict) -> None:
     os.makedirs(out_dir, exist_ok=True)
     # Data quality
     plt.figure(figsize=(6,4))
@@ -79,7 +80,7 @@ def plot_eda(df, text_col, sentiment_col, out_dir, sentiment_labels):
     plt.savefig(os.path.join(out_dir, 'wordcloud.png'))
     plt.close()
 
-def preprocess_data(config):
+def preprocess_data(config: dict) -> None:
     """
     Reads raw data, performs basic cleaning, splits it into train and test sets,
     and saves them to the processed data folder.

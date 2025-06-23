@@ -1,2 +1,7 @@
 [core]
     autostage = true
+    remote = origin
+['remote "origin"']
+    url = https://dagshub.com/mirambika00/sentiment-analysis-workflow.mlflow.dvc
+['remote "default"']
+    url = ../origin
