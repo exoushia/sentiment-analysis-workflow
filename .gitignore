@@ -1,0 +1,22 @@
+# Data and experiment artifacts
+data/
+mlruns/
+nltk_data/
+.dvc/
+*.pkl
+*.log
+*.csv
+*.json
+
+# Python cache and virtual environments
+__pycache__/
+venv/
+*.pyc
+
+# Credentials and secrets
+credentials.yaml
+
+# OS and IDE files
+.DS_Store
+.idea/
+.vscode/ 
