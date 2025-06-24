@@ -54,3 +54,5 @@ nltk_data/
 
 # Config
 config/credentials.yaml 
+.env
+.dvc/config.local

@@ -16,6 +16,8 @@ from sklearn.multiclass import OneVsRestClassifier
 from sklearn.ensemble import RandomForestClassifier
 from scripts.utils import load_config, get_logger, load_credentials, load_params
 
+import warnings
+warnings.filterwarnings("ignore", category=UserWarning)
 # Set up logger
 logger = get_logger("baseline", "baseline.log")
 
@@ -80,8 +82,9 @@ def run_baseline() -> None:
     selected_model = baseline_params['model']
     model_info = models[selected_model]
 
-    # Parent MLflow run for grid search
-    with mlflow.start_run(run_name=f"baseline_{selected_model}") as parent_run:
+    # Parent MLflow run for grid search set dynamically according to model type and tfidf feature size
+    parent_run_name = f"{params['baseline']['model']}_{params['baseline']['tfidf_max_features']}"
+    with mlflow.start_run(run_name=parent_run_name) as parent_run:
         if 'tags' in baseline_params:
             mlflow.set_tags(baseline_params['tags'])
         mlflow.log_param("model_type", selected_model)
@@ -234,7 +237,9 @@ if __name__ == '__main__':
     if 'mlflow' in creds:
         os.environ['MLFLOW_TRACKING_USERNAME'] = creds['mlflow'].get('username', '')
         os.environ['MLFLOW_TRACKING_PASSWORD'] = creds['mlflow'].get('password', '')
-    mlflow.set_experiment(config['mlflow']['experiments']['baseline'])
+    # Set MLflow experiment 
+    experiment_name = config['mlflow']['experiments']['baseline']
+    mlflow.set_experiment(experiment_name)
 
     if run_mode in ['both', 'baseline']:
         # Add custom nltk_data path if it exists
